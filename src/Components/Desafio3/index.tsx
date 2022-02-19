@@ -26,7 +26,6 @@ const Desafio3 = () => {
       for (let j = i + 1; j < list.length; j++) {
         if (sortWord(list[i]) === sortWord(list[j])) {
           count++;
-          break;
         }
       }
     }
