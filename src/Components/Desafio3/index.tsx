@@ -11,7 +11,8 @@ const Desafio3 = () => {
 
   const anagrams = (word: string) => {
     let count = 0;
-    let list = [];
+    let list: string[] = [];
+    let result: string[] = [];
 
     for (let i = 0; i < word.length; i++) {
       list.push(word[i]);
@@ -24,7 +25,11 @@ const Desafio3 = () => {
 
     for (let i = 0; i < list.length; i++) {
       for (let j = i + 1; j < list.length; j++) {
-        if (sortWord(list[i]) === sortWord(list[j])) {
+        if (
+          sortWord(list[i]) === sortWord(list[j]) &&
+          !result.includes(list[i])
+        ) {
+          result.push(list[i]);
           count++;
         }
       }
